@@ -7,8 +7,6 @@ import natsort
 import numpy as np
 from PIL import Image
 
-
-
 PATH_DIR = 'all files/'
 FPS = 10
 
