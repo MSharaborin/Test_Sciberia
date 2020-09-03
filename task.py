@@ -41,7 +41,6 @@ def fill_in_data(dictionaryWithSnapshots, flag = None):
 		listSnapshots = []
 		try:
 			for file in natsort.natsorted(os.listdir(PATH_DIR + str(dirName))):
-				print(file)
 				with open(PATH_DIR + str(dirName) + '/' + file, 'rb') as f:
 					try:
 						dataNdarray = pickle.load(f)
