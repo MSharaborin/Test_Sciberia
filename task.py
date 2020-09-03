@@ -2,9 +2,11 @@ import os
 import pickle
 from datetime import datetime
 
-import numpy as np
 import imageio
+import natsort
+import numpy as np
 from PIL import Image
+
 
 
 PATH_DIR = 'all files/'
@@ -38,7 +40,8 @@ def fill_in_data(dictionaryWithSnapshots, flag = None):
 	for dirName, listSnapshots in dictionaryWithSnapshots.items():
 		listSnapshots = []
 		try:
-			for file in os.listdir(PATH_DIR + str(dirName)):
+			for file in natsort.natsorted(os.listdir(PATH_DIR + str(dirName))):
+				print(file)
 				with open(PATH_DIR + str(dirName) + '/' + file, 'rb') as f:
 					try:
 						dataNdarray = pickle.load(f)
